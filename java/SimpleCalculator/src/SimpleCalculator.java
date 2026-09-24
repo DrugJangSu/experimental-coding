@@ -37,7 +37,7 @@ public class SimpleCalculator {
                 }
                 result = num1 / num2;
                 break;
-            default:
+            default: // default문은 위에 있는 것들이 아닌 다른 게 들어올 때 실행됨. 즉 예외상황(잘못된 입력)을 처리하기 위한 안전장치. 없어도 돌아가지만, 잘못된 값을 넣었을 때의 오류 방지용으로 넣음
                 System.out.println("잘못된 연산자입니다!");
                 scanner.close();
                 return; // 프로그램 종료
