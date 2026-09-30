@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/java/BankAccountSystem/BankAccountSystem.iml" filepath="$PROJECT_DIR$/java/BankAccountSystem/BankAccountSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/GameCharacterTest/GameCharacterTest.iml" filepath="$PROJECT_DIR$/java/GameCharacterTest/GameCharacterTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/HelloExperimental/HelloExperimental.iml" filepath="$PROJECT_DIR$/java/HelloExperimental/HelloExperimental.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/MiniAccountBook/MiniAccountBook.iml" filepath="$PROJECT_DIR$/java/MiniAccountBook/MiniAccountBook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/MovieTicketTest/MovieTicketTest.iml" filepath="$PROJECT_DIR$/java/MovieTicketTest/MovieTicketTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/MusicPlayerTest/MusicPlayerTest.iml" filepath="$PROJECT_DIR$/java/MusicPlayerTest/MusicPlayerTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/NumberGuessingGame/NumberGuessingGame.iml" filepath="$PROJECT_DIR$/java/NumberGuessingGame/NumberGuessingGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/RockPaperScissors/RockPaperScissors.iml" filepath="$PROJECT_DIR$/java/RockPaperScissors/RockPaperScissors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/SignUpSystem/SignUpSystem.iml" filepath="$PROJECT_DIR$/java/SignUpSystem/SignUpSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/SimpleCalculator/SimpleCalculator.iml" filepath="$PROJECT_DIR$/java/SimpleCalculator/SimpleCalculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/SmartPhoneBatteryTest/SmartPhoneBatteryTest.iml" filepath="$PROJECT_DIR$/java/SmartPhoneBatteryTest/SmartPhoneBatteryTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/experimental-coding.iml" filepath="$PROJECT_DIR$/.idea/experimental-coding.iml" />
+    </modules>
+  </component>
+</project>
