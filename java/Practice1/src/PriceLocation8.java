@@ -1,15 +1,17 @@
 import java.util.Scanner;
 
-public class PriceLocation7 {
+public class PriceLocation8 {
+
     public static void main(String[] args) {
-        int[] prices = {1000, 4000, 5000, 2000};
+        int[] prices = new int[4];
         int count = 0;
         int total = 0;
 
         Scanner input = new Scanner(System.in);
 
-
-        prices[1] = Integer.parseInt(input.nextLine());
+        for (int i = 0; i < prices.length; i++) {
+            prices[i] = Integer.parseInt(input.nextLine());
+        }
         int standard = Integer.parseInt(input.nextLine());
 
         for (int i = 0; i < prices.length; i++) {
@@ -23,4 +25,3 @@ public class PriceLocation7 {
 
     }
 }
-
