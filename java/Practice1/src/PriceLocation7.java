@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PriceLocation6 {
+public class PriceLocation7 {
     public static void main(String[] args) {
         int[] prices = {1000, 4000, 5000, 2000};
         int count = 0;
