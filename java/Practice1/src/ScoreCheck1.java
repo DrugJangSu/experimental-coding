@@ -7,10 +7,12 @@ public class ScoreCheck1 {
         int score = Integer.parseInt(input.nextLine());
         System.out.println(score);
 
-        if (score >= 60) {
-            System.out.println("pass");
+        if (score >= 90) {
+            System.out.println("A");
+        } else if (score >= 60) {
+            System.out.println("B");
         } else {
-            System.out.println("fail");
+            System.out.println("C");
         }
     }
 }
