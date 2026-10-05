@@ -10,7 +10,7 @@ public class Array3 {
         }
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] % 2 == 0) {
-                System.out.println(numbers[i]);
+                System.out.println(i);
             }
         }
 
