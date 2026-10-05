@@ -1,5 +1,5 @@
 public class Method15 {
-    public int findIndex (int [] numbers, int target) {
+    public int findIndex(int [] numbers, int target) {
     int index = -1;
     for (int i = 0; i < numbers.length; i++) {
         if (numbers[i] == target) {
