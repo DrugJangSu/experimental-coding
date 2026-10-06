@@ -5,4 +5,9 @@ public class Item1 {
     public void print() {
         System.out.println(name + "=" + price);
     }
+
+    public void lineTotal(int qty) {
+        System.out.println(qty * price);
+    }
+
 }
