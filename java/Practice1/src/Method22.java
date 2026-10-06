@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Method22 {
 
     public int [] makeReversed(int [] numbers) {
