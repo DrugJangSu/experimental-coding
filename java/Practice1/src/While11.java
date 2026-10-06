@@ -19,7 +19,7 @@ public class While11 {
                 break;
             } else if (menu.containsKey(product)) {
                 System.out.println("qty?");
-                int qty = Integer.parseInt(sc.next());
+                int qty = Integer.parseInt(sc.nextLine());
                 int line = qty * menu.get(product);
                 System.out.println("line=" + line);
                 total += line;
@@ -29,7 +29,7 @@ public class While11 {
         }
         System.out.println("total=" + total);
         System.out.println("pay?");
-        int pay = Integer.parseInt(sc.next());
+        int pay = Integer.parseInt(sc.nextLine());
         if (pay >= total) {
             int change = pay - total;
             System.out.println("change=" + change);
@@ -37,6 +37,5 @@ public class While11 {
             System.out.println("short");
         }
     }
-
 }
 
