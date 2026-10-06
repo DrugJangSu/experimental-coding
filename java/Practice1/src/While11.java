@@ -13,8 +13,8 @@ public class While11 {
         int total = 0;
 
         while (true) {
-            System.out.print("menu?\n");
-            String product = sc.next();
+            System.out.println("menu?");
+            String product = sc.nextLine();
             if (product.equals("done")) {
                 break;
             } else if (menu.containsKey(product)) {
