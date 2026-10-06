@@ -3,7 +3,7 @@ public class PostCheck1  {
         Post1 first = new Post1();
         first.title = "closed";
         first.body = "no class";
-        System.out.println("title");
-        System.out.println("body");
+        System.out.println(first.title);
+        System.out.println(first.body);
     }
 }
