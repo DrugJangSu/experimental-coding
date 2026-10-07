@@ -8,8 +8,9 @@ public class ItemCheck2 {
         item2.name = "water";
         item2.price = 1000;
 
-        item1.lineTotal(2);
-        item2.lineTotal(3);
+        System.out.println(item1.lineTotal(item1.price, 2));
+        System.out.println(item2.lineTotal(item2.price, 3));
+        System.out.println("total=" + (item1.lineTotal(item1.price, 2) + item2.lineTotal(item2.price, 3)));
 
     }
 }

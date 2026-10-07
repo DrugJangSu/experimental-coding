@@ -10,4 +10,8 @@ public class Item1 {
         System.out.println(qty * price);
     }
 
+    public int lineTotal(int price, int qty) {
+        return price * qty;
+    }
+
 }
