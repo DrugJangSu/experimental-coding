@@ -14,9 +14,16 @@ public class GradeCheck {
     System.out.println("kim=" + grade1.sum());
     System.out.println("lee=" + grade2.sum());
     System.out.println("kimBonus=" + grade1.withBonus(10));
+    System.out.println("gap=" + gap(grade1.sum(), grade2.sum()));
 
 
 
-
+    }
+    public static int gap(int score1, int score2) {
+        int scoreDifference = score1 - score2;
+        if (scoreDifference < 0) {
+            scoreDifference *= -1;
+        }
+        return scoreDifference;
     }
 }

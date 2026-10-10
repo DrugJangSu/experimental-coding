@@ -3,9 +3,6 @@ public class Grade {
     int kor;
     int eng;
 
-
-
-
     public int sum() {
         return (kor + eng);
     }
