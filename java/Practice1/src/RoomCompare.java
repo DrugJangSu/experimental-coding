@@ -47,7 +47,5 @@ public class RoomCompare {
         System.out.println("ok=" + ok);
         System.out.println("cheap=" + cheapName);
 
-
     }
-
 }
