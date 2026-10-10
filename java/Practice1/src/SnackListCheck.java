@@ -25,8 +25,9 @@ public class SnackListCheck {
         snacks.add(s3);
 
         for (int i = 0; i < snacks.size(); i++) {
-            System.out.println(snacks.get(i).name + "=" + snacks.get(i).stockValue());
-            total += snacks.get(i).stockValue();
+            int value = snacks.get(i).stockValue();
+            System.out.println(snacks.get(i).name + "=" + value);
+            total += value;
 
         }
         System.out.println("total=" + total);
