@@ -19,6 +19,11 @@ public class AcademyCheck {
         academy.addStudent(student2);
         academy.addStudent(student3);
 
+        academy.printOne(2);
+        academy.printOne(9);
+
+        System.out.println("------");
+
 
         // 4. 전체 출력
         academy.printAll();

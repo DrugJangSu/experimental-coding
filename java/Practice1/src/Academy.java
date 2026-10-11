@@ -17,6 +17,12 @@ public class Academy {
         }
     }
 
-    void printOne() {}
+    void printOne(int number) {
+        if (map.containsKey(number)) {
+            map.get(number).printInfo();
+        } else {
+            System.out.println("not found");
+        }
+    }
 
 }
