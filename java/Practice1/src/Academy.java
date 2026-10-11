@@ -17,4 +17,6 @@ public class Academy {
         }
     }
 
+    void printOne() {}
+
 }
