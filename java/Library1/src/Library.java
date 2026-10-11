@@ -42,7 +42,7 @@ public class Library {
         } else {
             LibraryBook book = map.get(number);
 
-            if (!book.borrowed) {
+            if (book.borrowed) {
                 System.out.println("이미 대출 중인 책이에요.");
             } else {
                 book.borrowed = true;
@@ -77,9 +77,4 @@ public class Library {
         return count;
     }
 }
-
-
-
-
-
 
