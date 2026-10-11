@@ -23,9 +23,16 @@ public class AcademyCheck {
         academy.printOne(9);
 
         System.out.println("------");
-
-
+        academy.updateScore(2, 95);
+        academy.updateScore(2, 150);
+        academy.updateScore(9, 80);
+        System.out.println("------");
+        academy.printAll();
+        System.out.println("------");
+        academy.deleteStudent(1);
+        academy.deleteStudent(9);
         // 4. 전체 출력
         academy.printAll();
+        academy.printOne(1);
     }
 }

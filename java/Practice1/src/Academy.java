@@ -25,4 +25,24 @@ public class Academy {
         }
     }
 
+    void updateScore(int number, int score) {
+        if ((score < 0) || (score > 100)) {
+            System.out.println("invalid number");
+        } else if (!map.containsKey(number)) {
+            System.out.println("not found");
+        } else {
+            map.get(number).score = score;
+            System.out.println("updated");
+        }
+    }
+    void deleteStudent(int number) {
+        if (!map.containsKey(number)) {
+            System.out.println("not found");
+        } else {
+            map.remove(number);
+            list.remove(number);
+            System.out.println("deleted");
+        }
+    }
+
 }
