@@ -10,7 +10,8 @@ public class TodoList {
             System.out.println("\n=== 할 일 목록 ===");
             System.out.println("1. 할 일 추가");
             System.out.println("2. 목록 보기");
-            System.out.println("3. 종료");
+            System.out.println("3. 완료한 할 일 삭제");
+            System.out.println("4. 종료");
             System.out.println("메뉴 선택: ");
 
             String menu = scanner.nextLine();
@@ -29,10 +30,30 @@ public class TodoList {
                     }
                 }
             } else if (menu.equals("3")) {
+                if (todos.isEmpty()) {
+                    System.out.println("삭제할 일이 없어요.");
+                } else {
+                    for (int i = 0; i < todos.size(); i++) {
+                        System.out.println((i + 1) + ". " + todos.get(i));
+                    }
+                    System.out.println("완료한 할 일 번호: ");
+                    String input = scanner.nextLine();
+
+                    try {
+                        int number = Integer.parseInt(input);
+                        if (number >= 1 && number <= todos.size()) {
+                            String removedTodo = todos.remove(number - 1);
+                            System.out.println("완료한 일: " + removedTodo);
+                        } else {
+                            System.out.println("목록에 있는 번호를 입력해 주세요.");
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.println("숫자를 입력해 주세요.");
+                    }
+                }
+            } else if (menu.equals("4")) {
                 System.out.println("프로그램을 종료합니다.");
                 break;
-            } else {
-                System.out.println("1, 2, 3 중에서 입력해 주세요.");
             }
         }
         scanner.close();
