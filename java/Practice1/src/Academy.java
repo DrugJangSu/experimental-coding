@@ -39,8 +39,9 @@ public class Academy {
         if (!map.containsKey(number)) {
             System.out.println("not found");
         } else {
+            Student student = map.get(number);
             map.remove(number);
-            list.remove(number);
+            list.remove(student);
             System.out.println("deleted");
         }
     }
