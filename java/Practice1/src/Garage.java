@@ -14,13 +14,13 @@ public class Garage {
         }
     }
 
-    void countCars() {
+    int countCars() {
         int count = 0;
         for (int i = 0; i < cars.size(); i++) {
             cars.get(i);
             count++;
         }
-        System.out.println(count);
+       return count;
     }
 
 }

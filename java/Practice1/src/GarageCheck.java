@@ -15,9 +15,9 @@ public class GarageCheck {
         garageB.addCar(car3);
 
         garageA.printAll();
-        garageA.countCars();
+        System.out.println("countA=" + garageA.countCars());
         garageB.printAll();
-        garageB.countCars();
+        System.out.println("countB=" + garageB.countCars());
 
     }
 }
