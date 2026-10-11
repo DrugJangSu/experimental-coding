@@ -18,9 +18,17 @@ public class TodoList {
 
             if (menu.equals("1")) {
                 System.out.println("추가할 일: ");
-                String todo = scanner.nextLine();
-                todos.add(todo);
-                System.out.println("추가했어요!");
+//                String todo = scanner.nextLine();
+//                todos.add(todo);
+//                System.out.println("추가했어요!");
+                String todo = scanner.nextLine().trim();
+
+                if (todo.isEmpty()) {
+                    System.out.println("할  일을 입력해 주세요.");
+                } else {
+                    todos.add(todo);
+                    System.out.println("추가했어요!");
+                }
             } else if (menu.equals("2")) {
                 if (todos.isEmpty()) {
                     System.out.println("아직 할 일이 없어요.");
