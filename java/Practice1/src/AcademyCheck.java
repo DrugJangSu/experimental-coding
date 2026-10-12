@@ -31,6 +31,13 @@ public class AcademyCheck {
         System.out.println("------");
         academy.deleteStudent(1);
         academy.deleteStudent(9);
+
+        System.out.println("------");
+        academy.printBySubject("java");
+        academy.printBySubject("db");
+        academy.printBySubject("python");
+
+        System.out.println("------");
         // 4. 전체 출력
         academy.printAll();
         academy.printOne(1);

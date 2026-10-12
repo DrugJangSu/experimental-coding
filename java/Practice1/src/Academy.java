@@ -46,4 +46,27 @@ public class Academy {
         }
     }
 
+    ArrayList<Student> findAllBySubject(String subject) {
+        ArrayList<Student> result = new ArrayList<>();
+        for (Student student : list) {
+            if (student.subject.equals(subject)) {
+                result.add(student);
+            }
+        }
+        return result;
+    }
+
+    void printBySubject(String subject) {
+        ArrayList<Student> found = findAllBySubject(subject);
+
+        if (found.isEmpty()) {
+            System.out.println("no student");
+        } else {
+            for (Student student : found) {
+                student.printInfo();
+            }
+        }
+
+    }
+
 }
