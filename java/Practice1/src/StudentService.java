@@ -15,6 +15,11 @@ public class StudentService {
     }
     void printOne(int no) {
         Student student = repository.findById(no);
+        if (student == null) {
+            System.out.println("not found");
+        } else {
+            student.printInfo();
+        }
     }
 
 }
