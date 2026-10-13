@@ -5,6 +5,11 @@ public class Student2Check {
 
         s1.printInfo();
         s2.printInfo();
+        System.out.println("---");
+        System.out.println(s1.getName() + " score=" + s1.getScore());
+        s1.changeScore(150);
+        s1.changeScore(95);
+        s1.printInfo();
 
     }
 }
