@@ -1,7 +1,11 @@
 import java.util.ArrayList;
 
 public class StudentService {
-    StudentRepository repository = new StudentRepository();
+    private StudentRepository repository;
+    public StudentService(StudentRepository repository) {
+        this.repository = repository;
+    }
+
     void register (Student student) {
         if (repository.findById(student.no) != null) {
             System.out.println("duplicate no");

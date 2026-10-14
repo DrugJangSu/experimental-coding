@@ -1,6 +1,6 @@
 public class RepositoryCheck {
     public static void main(String[] args) {
-        StudentRepository repo = new StudentRepository();
+        MemoryStudentRepository repo = new MemoryStudentRepository();
 
         // 학생 3명 만들고 setInfo (AcademyCheck에서 복사)
         // repo.save(student1); 처럼 3명 저장
