@@ -26,7 +26,7 @@ public class MemberController {
 
     @GetMapping("/members/sample")
     public String detail() {
-        Long id = 1L;   // 조회할 멤버 ID
+        Long id = 999L;
         try {
             Member member = memberService.findById(id);
             return toMemberString(member);
