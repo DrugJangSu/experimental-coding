@@ -69,12 +69,26 @@ public class MemberService {
         }
         Group newGroup = groupOptional.get();
 
-        // 그룹이 바뀔 때만: 예전 그룹 명단에서 빼고, 새 그룹에 넣기
-        Group oldGroup = member.getGroup();
-        if (!oldGroup.getId().equals(groupId)) {
-            oldGroup.getMembers().remove(member);
+        // ===== 여기부터 바뀐 부분 =====
+        // 껍데기(LAZY)에서 id만 꺼내기 → id는 껍데기도 알고 있어서 에러 안 남
+        Long oldGroupId = member.getGroup().getId();
+
+        if (!oldGroupId.equals(groupId)) {
+            // 예전 그룹을 DB에서 새로 불러옴 → 멤버 목록까지 진짜 데이터로 옴
+            Group oldGroup = groupRepository.findById(oldGroupId).get();
+
+            // 예전 그룹 명단에서 같은 id의 멤버를 찾아서 빼기
+            List<Member> oldMembers = oldGroup.getMembers();
+            for (int i = 0; i < oldMembers.size(); i++) {
+                if (oldMembers.get(i).getId().equals(id)) {
+                    oldMembers.remove(i);
+                    break;
+                }
+            }
+
             newGroup.addMember(member);
         }
+        // ===== 여기까지 =====
 
         member.setStageName(stageName);
         member.setRealName(realName);
