@@ -41,8 +41,8 @@ public class GroupController {
 
     @GetMapping("/groups/join")
     public String create() {
-        String name = "RESCENE";   // S2에서 KISSOFLIFE로 변경
-        Integer debutYear = 2024;  // S2에서 2023으로 변경
+        String name = "RESCENE";
+        Integer debutYear = 2024;
         try {
             Group group = groupService.create(name, debutYear);
             return toGroupString(group);

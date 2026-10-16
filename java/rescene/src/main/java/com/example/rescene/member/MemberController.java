@@ -37,10 +37,10 @@ public class MemberController {
 
     @GetMapping("/members/join")
     public String join() {
-        String stageName = "Woni";
-        String realName = "김원이";
-        String position = "리더";
-        Long groupId = 1L;   // 소속시킬 그룹 ID
+        String stageName = "Natty";
+        String realName = "나띠";
+        String position = "댄서";
+        Long groupId = 999L;
         try {
             Member member = memberService.join(stageName, realName, position, groupId);
             return toMemberString(member);
