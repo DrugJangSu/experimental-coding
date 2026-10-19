@@ -28,6 +28,15 @@ public class Store1 {
             }
         }
         System.out.println("total=" + total);
+        System.out.println("pay?");
+        int pay = sc.nextInt();
+        if (pay >= total) {
+            int change = pay - total;
+            System.out.println("change=" + change);
+        } else {
+            System.out.println("short");
+        }
+
 
 
     }
