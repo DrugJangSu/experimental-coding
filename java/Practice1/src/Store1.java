@@ -18,6 +18,10 @@ public class Store1 {
             } else if (category.containsKey(product)) {
                 System.out.println("how many?");
                 int qty = sc.nextInt();
+                if (qty <= 0) {
+                    System.out.println("invalid");
+                    continue;
+                }
                 total += category.get(product) * qty;
             } else {
                 System.out.println("unknown");
