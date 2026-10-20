@@ -21,7 +21,11 @@ public class Ct03Change {
     public int solution(int price, int money) {
         int answer = 0;
         // ↓↓↓ 여기에 코드 작성 ↓↓↓
-
+        if (money >= price) {
+            answer = money - price;
+        } else {
+            answer = -1;
+        }
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
     }
