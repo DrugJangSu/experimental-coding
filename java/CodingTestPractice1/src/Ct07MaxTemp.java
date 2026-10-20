@@ -22,7 +22,7 @@ public class Ct07MaxTemp {
         int answer = 0;
         // ↓↓↓ 여기에 코드 작성 ↓↓↓
         int max = temps[0];
-        for (int i = 1; i <= temps.length -1; i++) {
+        for (int i = 1; i < temps.length; i++) {
             if (temps[i] > max) {
                 max = temps[i];
             }
