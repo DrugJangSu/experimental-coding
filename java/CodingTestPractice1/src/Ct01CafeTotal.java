@@ -19,9 +19,7 @@ public class Ct01CafeTotal {
     public int solution(int price, int count) {
         int answer = 0;
         // ↓↓↓ 여기에 코드 작성 ↓↓↓
-
-
-
+        answer = price * count;
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
     }
