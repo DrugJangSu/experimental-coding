@@ -20,7 +20,11 @@ public class Ct06CartTotal {
     public int solution(int[] prices) {
         int answer = 0;
         // ↓↓↓ 여기에 코드 작성 ↓↓↓
-
+        int total = 0;
+        for (int i = 0; i < prices.length; i++) {
+            total += prices[i];
+        }
+        answer = total;
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
     }
