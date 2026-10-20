@@ -20,6 +20,8 @@ public class Ct01CafeTotal {
         int answer = 0;
         // ↓↓↓ 여기에 코드 작성 ↓↓↓
 
+
+
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
     }
