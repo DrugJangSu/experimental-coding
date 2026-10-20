@@ -21,7 +21,11 @@ public class Ct11CountA {
     public int solution(String s) {
         int answer = 0;
         // ↓↓↓ 여기에 코드 작성 ↓↓↓
-
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == 'a') {
+                answer++;
+            }
+        }
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
     }
