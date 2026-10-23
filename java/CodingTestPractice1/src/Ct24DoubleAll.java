@@ -26,9 +26,13 @@ public class Ct24DoubleAll {
 
         // 1. 결과 개수는 nums 개수와 똑같다 (미리 알고 있음!)
         //    → 장바구니 없이 바로 계란판(answer) 만들기
-
+        int [] answer = new int [nums.length];
 
         // 2. 선반(nums) i번째 값 × 2 를 계란판(answer) i번째에 넣기
+        for (int i = 0; i < nums.length; i++) {
+            int doubleValue = nums[i] * 2;
+            answer[i] = doubleValue;
+        }
 
 
         // ↑↑↑ 여기까지 ↑↑↑
