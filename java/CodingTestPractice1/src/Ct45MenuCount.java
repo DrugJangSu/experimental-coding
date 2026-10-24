@@ -43,8 +43,6 @@ public class Ct45MenuCount {
                 answer[i] = map.get(menu[i]);
             }
         }
-
-
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
     }
