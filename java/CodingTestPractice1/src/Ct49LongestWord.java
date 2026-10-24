@@ -31,8 +31,6 @@ public class Ct49LongestWord {
                 continue;
             }
         }
-
-
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
     }
