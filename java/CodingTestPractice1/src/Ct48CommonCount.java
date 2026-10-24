@@ -30,7 +30,6 @@ public class Ct48CommonCount {
                 }
             }
         }
-
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
     }
