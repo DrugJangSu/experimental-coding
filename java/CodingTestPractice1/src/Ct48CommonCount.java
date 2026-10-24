@@ -22,9 +22,14 @@ public class Ct48CommonCount {
     public int solution(int[] a, int[] b) {
         int answer = 0;
         // ↓↓↓ 여기에 코드 작성 ↓↓↓
-
         // a의 숫자 하나하나를, b의 숫자 전부와 비교하기
-
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < b.length; j++) { // 배열이 서로 다르니까 이번에는 중복 상관없을듯..?
+                if (a[i] == b[j]) {
+                    answer++;
+                }
+            }
+        }
 
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
