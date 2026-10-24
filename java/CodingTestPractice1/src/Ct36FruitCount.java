@@ -28,12 +28,19 @@ public class Ct36FruitCount {
         // 1. 세기 장부 만들기 (위 양식을 보면서 직접 타이핑)
         HashMap<String, Integer> map = new HashMap<>();
         for (int i = 0; i < fruits.length; i++) {
-
+            String word = fruits[i]; //
+            if (!map.containsKey(word)) {
+                map.put(word, 1); // 얘는 왜 나오는 거고
+            } else {
+                map.put(word, map.get(word) + 1);
+            }
         }
 
         // 2. target 개수를 answer에 담기
         //    (장부에 있으면 꺼내서 answer에, 없으면 answer는 그대로 0)
-
+        if (map.containsKey(target)) {
+            answer = map.get(target);
+        }
 
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
