@@ -23,8 +23,8 @@ public class Ct69WordCount {
         // ↓↓↓ 여기에 코드 작성 ↓↓↓
         // 1. 공백 기준으로 잘라서 문자열 배열에 담기
         String [] words = s.split(" "); // ????? 뭐가 뭔지는 모르겠고 따로 유틸 import 한 것도 없는데 이게 가능해? 심지어 배열 생성도 안하고 그냥 바로 넣어버리네
-        answer = words.length; // 또 () 붙였다가 에러뜸
         // 2. 단어 개수를 answer에
+        answer = words.length; // 또 () 붙였다가 에러뜸
 
 
         // ↑↑↑ 여기까지 ↑↑↑
