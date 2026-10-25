@@ -40,7 +40,6 @@ public class Ct87FindInGrid {
             }
         }
 
-
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
     }
