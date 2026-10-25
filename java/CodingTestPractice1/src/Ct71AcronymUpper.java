@@ -29,8 +29,7 @@ public class Ct71AcronymUpper {
             answer += words[i].charAt(0);
         }
         // 3. answer를 대문자로 바꿔서 다시 answer에 담기
-        answer.toUpperCase(); // 자꾸 camelCase로 해야되는거 까멱어 ㅅㅂ
-        // 그리고 answer = ansewr.toUpperCase(); 이 아니라는 거지???
+        answer = answer.toUpperCase(); // 자꾸 camelCase로 해야되는거 까멱어 ㅅㅂ
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
     }
