@@ -28,13 +28,24 @@ public class Ct57StackCommands {
         // ↓↓↓ 여기에 코드 작성 ↓↓↓
 
         // 1. 숫자 스택 만들기
+        Stack<Integer> stack = new Stack<>();
 
         // 2. cmds를 하나씩 보면서
         //    - 0이 아니면 → push
         //    - 0이면      → 스택이 비어 있지 않을 때만 pop
-
+        for (int i = 0; i < cmds.length; i++) {
+            if (cmds[i] != 0) {
+                stack.push(cmds[i]);
+            } else if (!stack.isEmpty()) {
+                stack.pop();
+            }
+        }
         // 3. 다 끝나고: 비었으면 -1, 아니면 맨 위(peek)를 answer에
-
+        if (stack.isEmpty()) {
+            answer = -1;
+        } else {
+            answer = stack.peek(); // 아직도 좀 헷갈리는데, peek가 그냥 보는건데 이렇게 변수에 넣는 것도 가능? 그리고 따로 빼서 넣는 경우도 있지 않음?
+        }
 
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
