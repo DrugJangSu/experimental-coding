@@ -35,7 +35,6 @@ public class Ct93SwapCase {
             }
         }
 
-
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
     }
