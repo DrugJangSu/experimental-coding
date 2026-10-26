@@ -27,7 +27,6 @@ public class Ct117DigitCount {
 
         }
 
-
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
     }
