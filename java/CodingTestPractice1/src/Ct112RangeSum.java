@@ -18,6 +18,9 @@ public class Ct112RangeSum {
         int answer = 0;
         // ↓↓↓ 여기에 코드 작성 ↓↓↓
 
+        for (int i = a; i <= b; i++) {
+            answer += i;
+        }
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
     }
