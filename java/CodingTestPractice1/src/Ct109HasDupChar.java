@@ -26,11 +26,12 @@ public class Ct109HasDupChar {
 
         // 1. 글자를 하나씩 서랍장에 넣기 (서랍 안 값은 아무 숫자나, 예: 1)
         HashMap<Character, Integer> map = new HashMap<>(); // Hashmap 써야되는지도 몰랐어.. 배꼈음
+        // String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character String이 아닌 Character
         for (int i = 0; i < s.length(); i++) {
             map.put(s.charAt(i), i);
         }
         // 2. 서랍 개수와 글자 수가 다르면 → 중복 있음 (Ct35)
-        if (map.size() != s.length()) {
+        if (map.size() != s.length()) { // 아니 이런 발상을 대체 어떻게 하냐고
             answer = true;
         }
 
