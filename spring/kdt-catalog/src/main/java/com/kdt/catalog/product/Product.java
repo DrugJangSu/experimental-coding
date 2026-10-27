@@ -31,4 +31,11 @@ public class Product {
         this.updatedAt = LocalDateTime.now();
     }
 
+    public void update(String name, int price, int stock) {
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+        this.updatedAt = LocalDateTime.now();
+    }
+
 }

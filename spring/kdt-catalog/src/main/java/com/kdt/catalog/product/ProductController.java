@@ -41,4 +41,10 @@ public class ProductController {
     public void delete(@PathVariable("id") Long id) {
         productService.delete(id);
     }
+
+    @PutMapping("/api/v1/products/{id}")
+    public Product update(@PathVariable("id") Long id, @RequestBody ProductUpdateRequest request) {
+        return productService.update(id, request);
+    }
+
 }

@@ -2,6 +2,7 @@ package com.kdt.catalog.product;
 
 import com.kdt.catalog.common.NotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -36,5 +37,12 @@ public class ProductService {
     public void delete(Long id) {
         Product product = findById(id);
         productRepository.delete(product);
+    }
+
+    @Transactional
+    public Product update(Long id, ProductUpdateRequest request) {
+        Product product = findById(id);
+        product.update(request.name(), request.price(), request.stock());
+        return product;
     }
 }
