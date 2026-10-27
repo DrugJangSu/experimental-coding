@@ -35,4 +35,10 @@ public class ProductController {
     public Product create(@RequestBody ProductCreateRequest request) {
         return productService.create(request);
     }
+
+    @DeleteMapping("/api/v1/products/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable("id") Long id) {
+        productService.delete(id);
+    }
 }

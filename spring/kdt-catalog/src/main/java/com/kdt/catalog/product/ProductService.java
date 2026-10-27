@@ -32,4 +32,9 @@ public class ProductService {
         Product product = new Product(request.name(), request.price(), request.stock());
         return productRepository.save(product);
     }
+
+    public void delete(Long id) {
+        Product product = findById(id);
+        productRepository.delete(product);
+    }
 }
