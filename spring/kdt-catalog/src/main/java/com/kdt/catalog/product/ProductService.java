@@ -1,5 +1,6 @@
 package com.kdt.catalog.product;
 
+import com.kdt.catalog.common.NotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,4 +16,13 @@ public class ProductService {
     public List<Product> findAll() {
         return productRepository.findAll();
     }
+
+    public long count() {
+        return productRepository.count();
+    }
+
+    public Product findById(Long id) {
+        return productRepository.findById(id).orElseThrow(() -> new NotFoundException("product missing"));
+    }
+
 }
