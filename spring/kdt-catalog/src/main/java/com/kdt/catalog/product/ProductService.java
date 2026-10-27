@@ -5,24 +5,31 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service // "비즈니스 로직을 담당하는 클래스" + 스프링이 객체를 만들어 관리한다
 public class ProductService {
-    private final ProductRepository productRepository;
+    private final ProductRepository productRepository; // DB 접근은 Repository에게 맡긴다
 
+    // 생성자 주입: 스프링이 ProductRepository 구현체를 알아서 넣어준다
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
     public List<Product> findAll() {
-        return productRepository.findAll();
+        return productRepository.findAll(); // SELECT * FROM catalog_product
     }
 
     public long count() {
-        return productRepository.count();
+        return productRepository.count(); // SELECT COUNT(*)
     }
 
     public Product findById(Long id) {
+        // findById는 Optional(있을 수도, 없을 수도)을 돌려준다
+        // 없으면 NotFoundException을 던진다 -> ApiExceptionAdvice가 404 응답으로 바꿔준다
         return productRepository.findById(id).orElseThrow(() -> new NotFoundException("product missing"));
     }
 
+    public Product create(ProductCreateRequest request) {
+        Product product = new Product(request.name(), request.price(), request.stock());
+        return productRepository.save(product);
+    }
 }

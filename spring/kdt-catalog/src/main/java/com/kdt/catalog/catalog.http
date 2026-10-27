@@ -1,0 +1,21 @@
+### 상품 목록
+GET http://localhost:8080/api/v1/products
+
+### 상품 개수
+GET http://localhost:8080/api/v1/products/count
+
+### 상품 하나
+GET http://localhost:8080/api/v1/products/9101
+
+### 없는 상품
+GET http://localhost:8080/api/v1/products/9999
+
+### 상품 등록
+POST http://localhost:8080/api/v1/products
+Content-Type: application/json
+
+{
+  "name": "monitor",
+  "price": 250000,
+  "stock": 5
+}
