@@ -23,4 +23,14 @@ public class CategoryService {
                 .orElseThrow(() -> new NotFoundException("category missing"));
     }
 
+    public Category create(CategoryCreateRequest request) {
+        Category category = new Category(request.name());
+        return categoryRepository.save(category);
+    }
+
+    public void delete(Long id) {
+        Category category = findById(id);
+        categoryRepository.delete(category);
+    }
+
 }

@@ -45,3 +45,26 @@ Content-Type: application/json
   "price": 1000,
   "stock": 1
 }
+
+### 카테고리 목록
+GET http://localhost:8080/api/v1/categories
+
+### 카테고리 하나
+GET http://localhost:8080/api/v1/categories/1
+
+### 없는 카테고리
+GET http://localhost:8080/api/v1/categories/99
+
+### 카테고리 등록
+POST http://localhost:8080/api/v1/categories
+Content-Type: application/json
+
+{
+  "name": "food"
+}
+
+### 카테고리 3 삭제
+DELETE http://localhost:8080/api/v1/categories/3
+
+### 없는 카테고리 삭제
+DELETE http://localhost:8080/api/v1/categories/99

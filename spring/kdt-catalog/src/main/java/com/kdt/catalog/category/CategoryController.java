@@ -1,8 +1,7 @@
 package com.kdt.catalog.category;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,4 +23,17 @@ public class CategoryController {
     public Category one(@PathVariable("id") Long id) {
         return categoryService.findById(id);
     }
+
+    @PostMapping("/api/v1/categories")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Category create(@RequestBody CategoryCreateRequest request) {
+        return categoryService.create(request);
+    }
+
+    @DeleteMapping("/api/v1/categories/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable("id") Long id) {
+        categoryService.delete(id);
+    }
+
 }
