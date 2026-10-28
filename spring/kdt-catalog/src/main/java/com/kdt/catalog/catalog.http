@@ -68,3 +68,12 @@ DELETE http://localhost:8080/api/v1/categories/3
 
 ### 없는 카테고리 삭제
 DELETE http://localhost:8080/api/v1/categories/99
+
+### 리뷰 목록 (9101)
+GET http://localhost:8080/api/v1/products/9101/reviews
+
+### 리뷰 목록 (9102, 리뷰 없음)
+GET http://localhost:8080/api/v1/products/9102/reviews
+
+### 리뷰 목록 (없는 상품)
+GET http://localhost:8080/api/v1/products/9999/reviews
