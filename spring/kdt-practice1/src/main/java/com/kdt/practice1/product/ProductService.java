@@ -31,4 +31,9 @@ public class ProductService {
         //   → Spring이 SQL을 만들어 보냄: select ... from catalog_product
         //   → 결과를 그대로 돌려줌 (Controller에게)
     }
+
+    public Product findById(Long id) {
+        return productRepository.findById(id).orElseThrow();
+    }
+
 }
