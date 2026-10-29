@@ -31,8 +31,10 @@ public class ProductController {
         //   → 돌아온 List<Product>를 @RestController가 JSON으로 바꿔서 브라우저로 보냄
     }
 
-    @GetMapping("/api/v1/products/{id}")
-    public Product one(@PathVariable("id") Long id) {
-        return productService.findById(id);
+    @GetMapping("/api/v1/products/{id}")                 // {id} = 주소 안의 빈칸. /9101이 오면 9101이 들어감
+    public Product one(@PathVariable("id") Long id) {    // @PathVariable("id"): 주소의 {id} 값을 꺼내서 변수 id에 넣음
+        //   {id}의 "id"와 @PathVariable("id")의 "id"가 같아야 짝이 맞음
+        return productService.findById(id);              // Service에게 "이 번호 상품 줘"
+        //   → 돌아온 Product 하나를 JSON으로 보냄
     }
 }

@@ -32,8 +32,10 @@ public class ProductService {
         //   → 결과를 그대로 돌려줌 (Controller에게)
     }
 
-    public Product findById(Long id) {
-        return productRepository.findById(id).orElseThrow();
+    public Product findById(Long id) {                   // 번호(id)로 상품 하나를 찾아 돌려주는 메서드
+        return productRepository.findById(id)            // Repository에게 "이 번호 찾아 줘" → select ... where id=?
+                .orElseThrow();                          // findById는 "있을 수도 없을 수도 있는 상자"를 줌
+        //   있으면 → 꺼내서 돌려줌
+        //   없으면 → 오류를 던짐 (지금은 기본 오류)
     }
-
 }
