@@ -1,5 +1,6 @@
 package com.kdt.practice1.product;              // 이 파일이 있는 폴더 위치
 
+import com.kdt.practice1.common.NotFoundException;
 import org.springframework.stereotype.Service;  // @Service 이름표를 가져옴
 
 import java.util.List;                          // 목록(List) 타입을 가져옴
@@ -32,9 +33,9 @@ public class ProductService {
         //   → 결과를 그대로 돌려줌 (Controller에게)
     }
 
-    public Product findById(Long id) {                   // 번호(id)로 상품 하나를 찾아 돌려주는 메서드
-        return productRepository.findById(id)            // Repository에게 "이 번호 찾아 줘" → select ... where id=?
-                .orElseThrow();                          // findById는 "있을 수도 없을 수도 있는 상자"를 줌
+    public Product findById(Long id) {                                          // 번호(id)로 상품 하나를 찾아 돌려주는 메서드
+        return productRepository.findById(id)                                   // Repository에게 "이 번호 찾아 줘" → select ... where id=?
+                .orElseThrow(() -> new NotFoundException("product missing"));   // findById는 "있을 수도 없을 수도 있는 상자"를 줌
         //   있으면 → 꺼내서 돌려줌
         //   없으면 → 오류를 던짐 (지금은 기본 오류)
     }
