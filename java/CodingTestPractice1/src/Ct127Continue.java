@@ -19,10 +19,16 @@ public class Ct127Continue {
     public int solution(int n) {
         int answer = 0;
         // ↓↓↓ 여기에 코드 작성 ↓↓↓
+//        for (int i = 1; i <= n; i++) {
+//            if (i % 3 != 0) {
+//                answer += i;
+//            }
+//        }
         for (int i = 1; i <= n; i++) {
-            if (i % 3 != 0) {
-                answer += i;
+            if (i % 3 == 0) {
+                continue;
             }
+            answer += i;
         }
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
