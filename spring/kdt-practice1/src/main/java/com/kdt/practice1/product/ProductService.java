@@ -2,6 +2,7 @@ package com.kdt.practice1.product;              // 이 파일이 있는 폴더 �
 
 import com.kdt.practice1.common.NotFoundException;
 import org.springframework.stereotype.Service;  // @Service 이름표를 가져옴
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;                          // 목록(List) 타입을 가져옴
 
@@ -45,5 +46,17 @@ public class ProductService {
         // 상자에서 이름·가격·재고를 꺼내 새 상품 객체를 만듦 (아직 id 없음)
         return productRepository.save(product);             // 저장 → insert into catalog_product ...
         //   DB가 id를 매겨서, id가 채워진 상품을 돌려줌
+    }
+
+    public void delete(Long id) {
+        Product product = findById(id);
+        productRepository.delete(product);
+    }
+
+    @Transactional
+    public Product update(Long id, ProductUpdateRequest request) {
+        Product product = findById(id);
+        product.update(request.name(), request.price(), request.stock());
+        return product;
     }
 }

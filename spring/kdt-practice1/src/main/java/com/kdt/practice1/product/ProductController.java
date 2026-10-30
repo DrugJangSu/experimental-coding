@@ -1,5 +1,4 @@
 package com.kdt.practice1.product;                              // 이 파일이 있는 폴더 위치
-
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,4 +40,15 @@ public class ProductController {
     public Product create(@RequestBody ProductCreateRequest request) {
         return productService.create(request);
     }
+    @DeleteMapping("/api/v1/products/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable("id") Long id) {
+        productService.delete(id);
+    }
+
+    @PutMapping("/api/v1/products/{id}")
+    public Product update(@PathVariable("id") Long id, @RequestBody ProductUpdateRequest request) {
+        return productService.update(id, request);
+    }
+
 }
