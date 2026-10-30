@@ -32,4 +32,13 @@ public class Product {
     private LocalDateTime createdAt;                     // 표의 created_at 칸 (DATETIME(6) → LocalDateTime)
     //   이름은 밑줄 대신 대문자: created_at ↔ createdAt (JPA가 자동으로 짝 맞춤)
     private LocalDateTime updatedAt;                     // 표의 updated_at 칸
+
+    public Product(String name, int price, int stock) {
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+    }
+
 }

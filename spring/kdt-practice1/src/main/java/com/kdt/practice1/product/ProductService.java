@@ -37,6 +37,13 @@ public class ProductService {
         return productRepository.findById(id)                                   // Repository에게 "이 번호 찾아 줘" → select ... where id=?
                 .orElseThrow(() -> new NotFoundException("product missing"));   // findById는 "있을 수도 없을 수도 있는 상자"를 줌
         //   있으면 → 꺼내서 돌려줌
-        //   없으면 → 오류를 던짐 (지금은 기본 오류)
+        //   없으면 → NotFoundException → ApiExceptionAdvice가 404로 바꿈
+    }
+
+    public Product create(ProductCreateRequest request) {   // 받은 요청 상자로 새 상품을 저장하는 메서드
+        Product product = new Product(request.name(), request.price(), request.stock());
+        // 상자에서 이름·가격·재고를 꺼내 새 상품 객체를 만듦 (아직 id 없음)
+        return productRepository.save(product);             // 저장 → insert into catalog_product ...
+        //   DB가 id를 매겨서, id가 채워진 상품을 돌려줌
     }
 }

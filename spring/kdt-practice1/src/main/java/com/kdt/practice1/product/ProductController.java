@@ -1,8 +1,7 @@
 package com.kdt.practice1.product;                              // 이 파일이 있는 폴더 위치
 
-import org.springframework.web.bind.annotation.GetMapping;      // @GetMapping 이름표를 가져옴
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;  // @RestController 이름표를 가져옴
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;                                          // 목록(List) 타입을 가져옴
 
@@ -36,5 +35,10 @@ public class ProductController {
         //   {id}의 "id"와 @PathVariable("id")의 "id"가 같아야 짝이 맞음
         return productService.findById(id);              // Service에게 "이 번호 상품 줘"
         //   → 돌아온 Product 하나를 JSON으로 보냄
+    }
+    @PostMapping("/api/v1/products")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Product create(@RequestBody ProductCreateRequest request) {
+        return productService.create(request);
     }
 }
