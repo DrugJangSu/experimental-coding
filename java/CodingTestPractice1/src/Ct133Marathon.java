@@ -23,20 +23,19 @@ public class Ct133Marathon {
 
     public String solution(String[] participant, String[] completion) {
         String answer = "";
-        HashMap<String, Integer> map = new HashMap<>();             // ✅ 직접 쓰신 것
+        HashMap<String, Integer> map = new HashMap<>();
 
         // 1. 참가자 세기 (처음이면 1, 있으면 +1)
         for (int i = 0; i < participant.length; i++) {
             if (!map.containsKey(participant[i])) {
                 map.put(participant[i], 1);
             } else {
-                map.put(participant[i], map.get(participant[i]) + 1);   // ✅ 직접 쓰신 줄
+                map.put(participant[i], map.get(participant[i]) + 1);
             }
         }
 
         // 2. 완주자마다 -1
-        for (int i = 0; i < completion.length; i++) {              // ✅ completion[i]로 직접 쓰신 것
-            map.put(completion[i], map.get(completion[i]) - 1);
+        for (int i = 0; i < completion.length; i++) {
         }
 
         // 3. 1 이상 남은 사람 찾기
