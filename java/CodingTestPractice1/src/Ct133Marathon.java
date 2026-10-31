@@ -1,24 +1,5 @@
 import java.util.HashMap;
 
-/*
- * [Ct133] 완주하지 못한 선수 (LMS 2부 03 · 프로그래머스 Lv.1 재도전)
- *
- * 문제
- * 마라톤에 참여한 선수 이름 배열 participant와 완주한 선수 이름 배열 completion이 주어집니다.
- * 단 한 명만 완주하지 못했을 때, 그 선수의 이름을 return 하도록 solution 메서드를 완성하세요.
- *
- * 제한사항
- * - completion의 길이는 participant의 길이보다 1 작습니다.
- * - 참가자 중에는 동명이인이 있을 수 있습니다.
- *
- * 입출력 예
- * participant                          completion                    result
- * ["leo", "kiki", "eden"]              ["eden", "kiki"]              "leo"
- * ["marina", "josipa", "nikola",       ["josipa", "filipa",          "vinko"
- *  "vinko", "filipa"]                   "marina", "nikola"]
- * ["mislav", "stanko", "mislav", "ana"] ["stanko", "ana", "mislav"]  "mislav"
- * ["a"]                                []                            "a"
- */
 public class Ct133Marathon {
 
     public String solution(String[] participant, String[] completion) {
@@ -36,6 +17,7 @@ public class Ct133Marathon {
 
         // 2. 완주자마다 -1
         for (int i = 0; i < completion.length; i++) {
+            map.put(completion[i], map.get(completion[i]) - 1);
         }
 
         // 3. 1 이상 남은 사람 찾기
