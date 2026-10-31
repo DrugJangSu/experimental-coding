@@ -52,4 +52,8 @@ public class ProductController {
         return productService.update(id, request);
     }
 
+    @GetMapping("/api/v1/products/count")
+    public long count() {
+        return productService.count();
+    }
 }
