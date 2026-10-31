@@ -1,4 +1,5 @@
 package com.kdt.practice1.product;                              // 이 파일이 있는 폴더 위치
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,7 +38,7 @@ public class ProductController {
     }
     @PostMapping("/api/v1/products")
     @ResponseStatus(HttpStatus.CREATED)
-    public Product create(@RequestBody ProductCreateRequest request) {
+    public Product create(@Valid @RequestBody ProductCreateRequest request) {
         return productService.create(request);
     }
     @DeleteMapping("/api/v1/products/{id}")
@@ -47,7 +48,7 @@ public class ProductController {
     }
 
     @PutMapping("/api/v1/products/{id}")
-    public Product update(@PathVariable("id") Long id, @RequestBody ProductUpdateRequest request) {
+    public Product update(@PathVariable("id") Long id, @Valid @RequestBody ProductUpdateRequest request) {
         return productService.update(id, request);
     }
 
