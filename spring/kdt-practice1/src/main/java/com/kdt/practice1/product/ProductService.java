@@ -59,4 +59,8 @@ public class ProductService {
         product.update(request.name(), request.price(), request.stock());
         return product;
     }
+
+    public long count() {
+        return productRepository.count();
+    }
 }
