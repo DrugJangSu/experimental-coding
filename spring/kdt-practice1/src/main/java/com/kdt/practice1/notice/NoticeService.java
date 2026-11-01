@@ -1,6 +1,9 @@
 package com.kdt.practice1.notice;
 
 import com.kdt.practice1.common.NotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -39,6 +42,16 @@ public class NoticeService {
     public void delete(Long id) {
         Notice notice = findById(id);
         noticeRepository.delete(notice);
+    }
+
+    public NoticePageResponse findPage(int page, int size) {
+        Page<Notice> result = noticeRepository.findAll(PageRequest.of(page, size, Sort.by("id")));
+        return new NoticePageResponse(
+                result.getContent(),
+                result.getNumber(),
+                result.getSize(),
+                result.getTotalElements()
+        );
     }
 
 }
