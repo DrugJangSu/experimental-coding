@@ -19,6 +19,11 @@ public class NoticeController {
         return noticeService.findAll();
     }
 
+    @GetMapping("/api/v1/notices/page")
+    public NoticePageResponse page(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size) {
+        return noticeService.findPage(page, size);
+    }
+
     @GetMapping("/api/v1/notices/{id}")
     public Notice one(@PathVariable("id") Long id) {
         return noticeService.findById(id);
