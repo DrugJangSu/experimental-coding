@@ -67,3 +67,12 @@ DELETE http://localhost:8080/api/v1/notices/1
 
 ### 없는 공지 삭제
 DELETE http://localhost:8080/api/v1/notices/9999
+
+### FAQ 등록
+POST http://localhost:8080/api/v1/faqs
+Content-Type: application/json
+
+{
+  "question": "배송은 얼마나 걸리나요?",
+  "answer": "보통 2~3일 걸립니다"
+}
