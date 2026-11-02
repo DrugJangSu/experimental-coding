@@ -31,4 +31,10 @@ public class StatisticsController {
             @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
         return statisticsService.menuStatistics(date);
     }
+
+    @GetMapping("/customers")
+    public List<CustomerStatistics> customers(
+            @RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
+        return statisticsService.customerStatistics(date);
+    }
 }

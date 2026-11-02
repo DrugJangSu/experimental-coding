@@ -42,4 +42,20 @@ public interface OrderStatisticsRepository extends JpaRepository<Order, Long> {
     List<MenuStatistics> menuStatistics(@Param("start") LocalDateTime start,
                                         @Param("end") LocalDateTime end);
 
+    @Query("""
+            select new com.kdt.practice2.statistics.CustomerStatistics(
+                o.email,
+                count(distinct o.id),
+                count(distinct case when o.status = 'PLACED' then o.id end),
+                count(distinct case when o.status = 'CANCELLED' then o.id end),
+                sum(case when o.status = 'PLACED' then i.quantity else 0 end),
+                sum(case when o.status = 'PLACED' then i.lineAmount else 0 end))
+            from OrderItem i join i.order o
+            where o.createdAt >= :start and o.createdAt < :end
+            group by o.email
+            order by o.email
+            """)
+    List<CustomerStatistics> customerStatistics(@Param("start") LocalDateTime start,
+                                                @Param("end") LocalDateTime end);
+
 }

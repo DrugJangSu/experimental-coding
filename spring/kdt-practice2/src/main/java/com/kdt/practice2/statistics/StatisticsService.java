@@ -35,4 +35,10 @@ public class StatisticsService {
         LocalDateTime end = date.plusDays(1).atStartOfDay();
         return repository.menuStatistics(start, end);
     }
+
+    public List<CustomerStatistics> customerStatistics(LocalDate date) {
+        LocalDateTime start = date.atStartOfDay();
+        LocalDateTime end = date.plusDays(1).atStartOfDay();
+        return repository.customerStatistics(start, end);
+    }
 }
