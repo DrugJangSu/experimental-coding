@@ -1,0 +1,45 @@
+package com.kdt.practice2.statistics;
+
+import com.kdt.practice2.order.Order;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+public interface OrderStatisticsRepository extends JpaRepository<Order, Long> {
+
+    @Query("select count(o)  from Order o "
+    + "where o.createdAt >= :start and o.createdAt < :end")
+    long countOrders(@Param("start") LocalDateTime start,
+                     @Param("end") LocalDateTime end);
+    @Query("select count(o) from Order o "
+    + "where o.status = :status and o.createdAt >= :start and o.createdAt < :end")
+    long countOrdersByStatus(@Param("status") String status,
+                             @Param("start") LocalDateTime start,
+                             @Param("end") LocalDateTime end);
+
+    @Query("select coalesce(sum(i.quantity), 0L) from OrderItem i join i.order o "
+            + "where o.status = 'PLACED' and o.createdAt >= :start and o.createdAt < :end")
+    long sumPlacedQuantity(@Param("start") LocalDateTime start,
+                           @Param("end") LocalDateTime end);
+
+    @Query("select coalesce(sum(i.lineAmount), 0L) from OrderItem i join i.order o "
+            + "where o.status = 'PLACED' and o.createdAt >= :start and o.createdAt < :end")
+    long sumPlacedAmount(@Param("start") LocalDateTime start,
+                         @Param("end") LocalDateTime end);
+
+    @Query("""
+            select new com.kdt.practice2.statistics.MenuStatistics(
+                i.menuId, i.menuName, sum(i.quantity), sum(i.lineAmount))
+            from OrderItem i join i.order o
+            where o.status = 'PLACED'
+              and o.createdAt >= :start and o.createdAt < :end
+            group by i.menuId, i.menuName
+            order by i.menuId
+            """)
+    List<MenuStatistics> menuStatistics(@Param("start") LocalDateTime start,
+                                        @Param("end") LocalDateTime end);
+
+}
