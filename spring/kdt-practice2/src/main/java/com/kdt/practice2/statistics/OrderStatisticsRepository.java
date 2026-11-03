@@ -60,4 +60,12 @@ public interface OrderStatisticsRepository extends JpaRepository<Order, Long> {
                                                 @Param("end") LocalDateTime end);
 
     List<Order> findByShippingDateAndStatusOrderByEmailAscIdAsc(LocalDate shippingDate, String status);
+
+    @Query("""
+            select distinct o from Order o
+            join fetch o.items
+            where o.shippingDate = :shippingDate and o.status = 'PLACED'
+            order by o.email, o.id
+            """)
+    List<Order> findPlacedWithItems(@Param("shippingDate") LocalDate shippingDate);
 }

@@ -1,0 +1,36 @@
+@baseUrl = http://localhost:8080
+
+### A17 접수일별 주문 통계 — 정상
+GET {{baseUrl}}/api/v1/statistics/orders?date=2026-11-04
+
+### A18 접수일별 메뉴 통계 — 정상
+GET {{baseUrl}}/api/v1/statistics/menus?date=2026-11-04
+
+### A24 접수일별 고객 통계 — 정상
+GET {{baseUrl}}/api/v1/statistics/customers?date=2026-11-04
+
+### A14 배송 묶음 — 정상
+GET {{baseUrl}}/api/v1/delivery-batches?shippingDate=2026-11-05
+
+### A17 주문 없는 날 — 200, 전부 0
+GET {{baseUrl}}/api/v1/statistics/orders?date=2026-11-10
+
+### A17 date 누락 — 400 VALIDATION_ERROR
+GET {{baseUrl}}/api/v1/statistics/orders
+
+### A17 date 형식 오류 — 400 VALIDATION_ERROR
+GET {{baseUrl}}/api/v1/statistics/orders?date=abc
+
+### CORS 확인 — 허용할 출처에서 온 GET
+GET {{baseUrl}}/api/v1/statistics/orders?date=2026-11-04
+Origin: http://127.0.0.1:8000
+
+### CORS 사전 요청 — 허용된 출처
+OPTIONS {{baseUrl}}/api/v1/statistics/orders?date=2026-11-04
+Origin: http://127.0.0.1:8000
+Access-Control-Request-Method: GET
+
+### CORS 사전 요청 — 허용 안 된 출처 (localhost는 다른 출처)
+OPTIONS {{baseUrl}}/api/v1/statistics/orders?date=2026-11-04
+Origin: http://localhost:8000
+Access-Control-Request-Method: GET
