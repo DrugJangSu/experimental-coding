@@ -34,3 +34,9 @@ Access-Control-Request-Method: GET
 OPTIONS {{baseUrl}}/api/v1/statistics/orders?date=2026-11-04
 Origin: http://localhost:8000
 Access-Control-Request-Method: GET
+
+### 비교: DB에서 세기 (기존)
+GET {{baseUrl}}/api/v1/statistics/orders?date=2026-11-04
+
+### 비교: Java for문으로 세기 (새로)
+GET {{baseUrl}}/api/v1/statistics-loop/orders?date=2026-11-04
