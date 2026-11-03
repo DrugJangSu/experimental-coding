@@ -21,8 +21,7 @@ public class DeliveryService {
     }
 
     public List<DeliveryBatch> batches(LocalDate shippingDate) {
-        List<Order> orders = repository
-                .findByShippingDateAndStatusOrderByEmailAscIdAsc(shippingDate, "PLACED");
+        List<Order> orders = repository.findPlacedWithItems(shippingDate);
 
         Map<String, List<Order>> groups = new LinkedHashMap<>();
         for (Order order : orders) {
