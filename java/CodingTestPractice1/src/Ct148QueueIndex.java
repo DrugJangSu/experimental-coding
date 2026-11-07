@@ -23,11 +23,16 @@ public class Ct148QueueIndex {
         int answer = 0;
         // ↓↓↓ 여기에 코드 작성 ↓↓↓
         Queue<Integer> queue = new LinkedList<>();
-        for (int num : nums) {
-            queue.offer(num);
+//        for (int num : nums) {
+//            queue.offer(num);
+//        }
+        for (int i = 0; i < nums.length; i++) {
+            queue.offer(i);
         }
         for (int i = 0; i < k; i++) {
-            answer += queue.poll();
+//            answer += queue.poll();
+            int idx = queue.poll();
+            answer += nums[idx];
         }
         // ↑↑↑ 여기까지 ↑↑↑
         return answer;
