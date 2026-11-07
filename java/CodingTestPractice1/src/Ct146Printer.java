@@ -31,7 +31,7 @@ public class Ct146Printer {
 
             boolean higher = false;
             for (int other : queue) {
-                if (__________) {                // 번호로 중요도를 꺼내서 비교
+                if (priorities[other] > priorities[now]) {                // 번호로 중요도를 꺼내서 비교
                     higher = true;
                     break;
                 }
@@ -41,7 +41,7 @@ public class Ct146Printer {
                 queue.offer(now);
             } else {
                 count++;                         // 인쇄!
-                if (__________) {                // 방금 인쇄한 게 내가 찾던 문서면
+                if (now == location) {                // 방금 인쇄한 게 내가 찾던 문서면
                     return count;
                 }
             }
