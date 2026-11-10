@@ -29,5 +29,6 @@ public class CarList {
             c.print();
         }
 
+        car1.paint("blue");
     }
 }

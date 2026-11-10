@@ -7,4 +7,9 @@ public class Car {
     public void print() {
         System.out.println(color + " " + number);
     }
+
+    public void paint(String newColor) {
+        color = newColor;
+    }
+
 }
