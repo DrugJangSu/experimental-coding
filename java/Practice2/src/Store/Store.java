@@ -6,6 +6,7 @@ public class Store {
     String location;
     boolean isOpen;
     Item[] items = new Item[4];
+    Item recommend;
 
 
     public static void main(String[] args) {
@@ -49,10 +50,29 @@ public class Store {
         System.out.println("총 상품 수: " + store.items.length);
         System.out.println("----- 상품 목록 -----");
         for (int i = 0; i < store.items.length; i++) {
-            System.out.println((i + 1) + ". " + store.items[i].name);
+            if (store.items[i].stock == 0) {
+                System.out.println((i + 1) + ". " + store.items[i].name + " (품절)");
+            } else {
+                System.out.println((i + 1) + ". " + store.items[i].name);
+            }
             System.out.println("   가격: " + store.items[i].price + "원");
             System.out.println("   재고: " + store.items[i].stock + "개");
             System.out.println("   행사: " + store.items[i].isEvent);
         }
+        System.out.println("----- 행사 상품 -----");
+        for (int i = 0; i < store.items.length; i++) {
+            if (store.items[i].isEvent) {
+                System.out.println(store.items[i].name);
+            }
+        }
+        store.recommend = store.items[2];
+        System.out.println("추천 상품: " + store.recommend.name);
+
+        int total = 0;
+        for (int i = 0; i < store.items.length; i++) {
+            total += store.items[i].price * store.items[i].stock;
+        }
+        System.out.println("총 재고 가격: " + total + "원");
+
     }
 }
