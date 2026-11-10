@@ -21,6 +21,14 @@ public class Academy {
         }
     }
 
+    void printOne(int no) {
+        if (!map.containsKey(no)) {
+            System.out.println("없는 번호: " + no);
+        } else {
+            map.get(no).printInfo();
+        }
+    }
+
     public static void main(String[] args) {
     Academy academy = new Academy();
     academy.addStudent(1, "홍길동", "Java", 90);
@@ -29,5 +37,7 @@ public class Academy {
     academy.addStudent(4, "박민수", "Java", 70);
 
     academy.printAll();
+    academy.printOne(3);
+    academy.printOne(9);
     }
 }
