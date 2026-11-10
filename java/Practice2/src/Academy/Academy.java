@@ -51,6 +51,28 @@ public class Academy {
         }
     }
 
+    ArrayList<Student> findAllBySubject(String subject) {
+        ArrayList<Student> result = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            Student s = list.get(i);
+            if (s.subject.equals(subject)) {
+                result.add(s);
+            }
+        }
+        return result;
+    }
+    void printBySubject(String subject) {
+        ArrayList<Student> result = findAllBySubject(subject);
+        if (result.size() == 0) {
+            System.out.println("해당 과목 수강생이 없습니다: " + subject);
+        } else {
+            System.out.println("[" + subject + " 수강생]");
+            for (int i = 0; i < result.size(); i++) {
+                result.get(i).printInfo();
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Academy academy = new Academy();
         academy.addStudent(1, "홍길동", "Java", 90);
@@ -64,5 +86,8 @@ public class Academy {
         academy.deleteStudent(1);
         academy.deleteStudent(9);
         academy.printAll();
+        academy.printBySubject("Java");
+        academy.printBySubject("Python");
+        academy.printBySubject("C++");
     }
 }
