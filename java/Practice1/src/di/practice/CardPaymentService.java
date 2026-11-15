@@ -13,4 +13,3 @@ public class CardPaymentService implements PaymentService{
         System.out.println("카드로 " + amount + "원 결제했습니다.");
     }
 }
-5
