@@ -15,5 +15,4 @@ public class ProductService {
     public Optional<Product> findProduct(Integer productId) {
         return productRepository.findById(productId);
     }
-
 }
