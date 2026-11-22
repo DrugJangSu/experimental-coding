@@ -1,10 +1,8 @@
 package com.example.webpractice1.product;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.example.webpractice1.category.Category;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name ="product")
@@ -18,6 +16,10 @@ public class Product {
 
     @Column(name = "category_id")
     private Integer categoryId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name= "category_id", insertable = false, updatable = false)
+    private Category category;
 
     protected Product() {
     }
@@ -36,5 +38,7 @@ public class Product {
         return categoryId;
     }
 
-
+    public Category getCategory() {
+        return category;
+    }
 }
